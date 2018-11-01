@@ -23,11 +23,12 @@ class CreateSanphamTable extends Migration
                 $table->integer('sp_giaGoc')
                     ->default('0')
                     ->comment('Giá sản phẩm');
-                $table->integer('sp_giaGoc')
+                $table->integer('sp_giaBan')
                     ->default('0')
                     ->comment('Giá bán sản phẩm');
-                $table->tinyInteger('sp_hinh')
-                    ->default('2')
+                $table->string('sp_hinh',200)
+                    ->comment('Hình sản phẩm');
+                    
                     ->comment('Trạng thái # Trạng thái sản phẩm: 1-khóa, 2-khả dụng');
         });
     }
