@@ -28,9 +28,25 @@ class CreateSanphamTable extends Migration
                     ->comment('Giá bán sản phẩm');
                 $table->string('sp_hinh',200)
                     ->comment('Hình sản phẩm');
-                    
-                    ->comment('Trạng thái # Trạng thái sản phẩm: 1-khóa, 2-khả dụng');
+                $table->text('sp_thongTin')
+                    ->comment('Thông tin sản phẩm');    
+                $table->string('sp_danhGia',50)
+                    ->comment('Đánh giá sản phẩm');
+                $table->timestamp('sp_taoMoi')
+                    ->default(DB::raw('CURRENT_TIMESTAMP'))
+                    ->comment('Sản phẩm tạo mới');
+                $table->timestamp('sp_taoMoi')
+                    ->default(DB::raw('CURRENT_TIMESTAMP'))
+                    ->comment('Sản phẩm cập nhật');
+                $table->unsignedTinyInteger('sp_trangThai')
+                    ->default('2')
+                    ->comment('Trạng thái sản phẩm: 1-khóa, 2-khả dụng');
+                $table->unsignedTinyInteger('l_ma')
+                    ->comment('Mã loại sản phẩm');
+                $table->primary(['sp_ma']);
+                $table->unique(['sp_ten']);
         });
+        DB::statement("ALERT TABLE 'sanpham' comment 'Sản phẩm'");
     }
 
     /**

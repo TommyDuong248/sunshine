@@ -28,7 +28,8 @@ class CreateChudeTable extends Migration
                     ->comment('Thời điểm cập nhật chủ đề');
                 $table->unsignedTinyInteger('cd_trangThai')
                     ->comment(' 1-đóng, 2-khả dụng');
-                
+                $table->primary(['cd_ma']);
+                $table->unique(['cd_ten']);
         });
     }
 

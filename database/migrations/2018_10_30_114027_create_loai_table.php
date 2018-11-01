@@ -32,8 +32,10 @@ class CreateLoaiTable extends Migration
                 $table->unique(['l_ten']);
                 $table->foreign(['l_ma_sp'])
                     ->references('l_ma')
-                    ->on('loai')
-        });
+                    ->on('loai');
+                $table->primary(['l_ma']);
+        }
+    );
     }
 
     /**
