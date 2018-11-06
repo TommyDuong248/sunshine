@@ -14,6 +14,7 @@ class CreateXuatxuTable extends Migration
     public function up()
     {
         Schema::create('xuatxu', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->smallInteger('xx_ma')
                 ->comment('mã xuất xứ');
             $table->string('xx_ten',100)
