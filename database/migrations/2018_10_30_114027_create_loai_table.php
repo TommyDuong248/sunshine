@@ -30,9 +30,7 @@ class CreateLoaiTable extends Migration
                     ->default('2')
                     ->comment('Trạng thái # Trạng thái sản phẩm: 1-khóa, 2-khả dụng');
                 $table->unique(['l_ten']);
-                $table->foreign(['l_ma_sp'])
-                    ->references('l_ma')
-                    ->on('loai');
+                
                 $table->primary(['l_ma']);
         }
     );
