@@ -55,7 +55,7 @@ class CreateKhuyenmaiTable extends Migration
                     ->default('2')
                     ->comment('Trạng thái # Trạng thái sản phẩm: 1-khóa, 2-khả dụng');
                 
-                $table->primary(['km_ma']);
+                //$table->primary(['km_ma']);
         }
     ); DB::statement("ALERT TABLE 'khuyenmai' comment 'Khuyen mãi'");
     }

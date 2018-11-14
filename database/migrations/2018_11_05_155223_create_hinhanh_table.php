@@ -20,7 +20,7 @@ class CreateHinhanhTable extends Migration
         
             $table->string('ha_ten',150)
             ->comment('tên hình ảnh');
-        
+            $table->unsignedBigInteger('sp_ma');
             $table->foreign(['sp_ma'])
                 ->references('sp_ma')
                 ->on('sanpham');

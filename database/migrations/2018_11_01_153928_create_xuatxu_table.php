@@ -31,7 +31,7 @@ class CreateXuatxuTable extends Migration
                     $table->primary(['xx_ma']);
                     $table->unique(['xx_ten']);
             });
-            DB::statement("ALERT TABLE 'xuatxu' comment 'Xuất xứ'");
+            
         
     }
 

@@ -35,18 +35,21 @@ class CreateSanphamTable extends Migration
                 $table->timestamp('sp_taoMoi')
                     ->default(DB::raw('CURRENT_TIMESTAMP'))
                     ->comment('Sản phẩm tạo mới');
-                $table->timestamp('sp_taoMoi')
+                $table->timestamp('sp_capNhat')
                     ->default(DB::raw('CURRENT_TIMESTAMP'))
                     ->comment('Sản phẩm cập nhật');
                 $table->unsignedTinyInteger('sp_trangThai')
                     ->default('2')
                     ->comment('Trạng thái sản phẩm: 1-khóa, 2-khả dụng');
-                $table->unsignedTinyInteger('l_ma')
-                    ->comment('Mã loại sản phẩm');
-                $table->primary(['sp_ma']);
-                $table->unique(['sp_ten']);
+                $table->unsignedTinyInteger('l_ma');
+                 
+                $table->foreign(['l_ma'])
+                    ->references('l_ma')
+                    ->on('loai');
+                //$table->primary(['sp_ma']);
+                //$table->unique(['sp_ten']);
         });
-        DB::statement("ALERT TABLE 'sanpham' comment 'Sản phẩm'");
+        
     }
 
     /**

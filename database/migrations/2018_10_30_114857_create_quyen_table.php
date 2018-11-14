@@ -30,6 +30,8 @@ class CreateQuyenTable extends Migration
                     ->comment('Thời điểm cập nhật quyền');
                 $table->unsignedTinyInteger('q_trangThai')
                     ->comment(' 1-đóng, 2-khả dụng');
+                //$table->primary(['q_ma']);
+                $table->unique(['q_ten']);
         });
     }
 

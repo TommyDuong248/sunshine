@@ -17,7 +17,7 @@ class CreateNhacungcapTable extends Migration
             $table->engine = 'InnoDB';
             $table->smallInteger('ncc_ma')
                 ->comment('mã nhà cung cấp');
-            $table->string('ncc_ten',200)
+            $table->string('ncc_ten',191)
                 ->comment('tên nhà cung cấp');
             $table->string('ncc_daiDien',100)
                 ->comment('tên nhà đại diện');
@@ -34,13 +34,16 @@ class CreateNhacungcapTable extends Migration
             $table->unsignedTinyInteger('ncc_trangThai')
                     ->default('2')
                     ->comment(' 1-đóng, 2-khả dụng');
+
+
+            $table->unsignedTinyInteger('xx_ma');        
             $table->primary(['ncc_ma']);
             $table->unique(['ncc_ten']);
             $table->foreign(['xx_ma'])
                     ->references('xx_ma')
                     ->on('xuatxu');
             });
-            DB::statement("ALERT TABLE 'nhacungcap' comment 'Nhà cung cấp'");
+            
         
     }
 

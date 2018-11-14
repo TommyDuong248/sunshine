@@ -14,3 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
+/*
+use App\Loai;
+Route::get('danhsachloai', funtion(){
+
+    //Eloquent Model
+    $ds_loai = Loai::all();
+    //Query Builder
+    $ds_loai = DB::table('loai')->get();
+
+    $join = $json_encode($ds_loai);
+    return $json;
+}
+);
+*/
+route::get('/danhsachloai','LoaiController@index')->name('danhsachloai.index');
+route::get('/danhsachsanpham','SanPhamController@index')->name('danhsachsanpham.index');

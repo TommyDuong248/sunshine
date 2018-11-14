@@ -26,12 +26,11 @@ class CreateLoaiTable extends Migration
                 $table->timestamp('l_capNhat')
                     ->default(DB::raw('CURRENT_TIMESTAMP'))
                     ->comment('Thời điểm đầu tiên tạo loại sản phẩm # Thời điểm cập nhật loại sản phẩm gần nhất');
-                $table->tinyInteger('l_trangThai')
+                $table->unsignedTinyInteger('l_trangThai')
                     ->default('2')
                     ->comment('Trạng thái # Trạng thái sản phẩm: 1-khóa, 2-khả dụng');
                 $table->unique(['l_ten']);
-                
-                $table->primary(['l_ma']);
+                //$table->primary(['l_ma']);
         }
     );
     }
