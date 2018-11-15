@@ -1,5 +1,6 @@
 @extends('backend.layout.index')
 @section('main-content')
+<a href="{{ route('danhsachloai.create')}}">Thêm mới</a>
 <h1>Xin chao</h1>
 <table>
     <thead>

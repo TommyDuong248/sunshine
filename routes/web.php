@@ -29,4 +29,6 @@ Route::get('danhsachloai', funtion(){
 );
 */
 route::get('/danhsachloai','LoaiController@index')->name('danhsachloai.index');
+route::get('/danhsachloai/create','LoaiController@create')->name('danhsachloai.create');
+route::post('/danhsachloai/create','SanPhamController@store')->name('danhsachsanpham.store');
 route::get('/danhsachsanpham','SanPhamController@index')->name('danhsachsanpham.index');
