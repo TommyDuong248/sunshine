@@ -46,4 +46,9 @@ Route::put('admin/danhsachloai/{id}','LoaiController@update')->name('danhsachloa
 Route::post('admin/danhsachloai/create','LoaiController@store')->name('danhsachloai.store');
 Route::delete('admin/danhsachloai/{id}','LoaiController@destroy')->name('danhsachloai.destroy');
 Route::get('admin/danhsachchude','ChuDeController@index')->name('danhsachchude.index');
-Route::get('admin/ds_sp','SanPhamController@index')->name('ds_sp.index');
+Route::get('admin/danhsachsanpham','SanPhamController@index')->name('danhsachsanpham.index');
+Route::get('admin/danhsachsanpham','SanPhamController@create')->name('danhsachsanpham.create');
+Route::post('admin/danhsachsanpham','SanPhamController@store')->name('danhsachsanpham.store');
+Route::get('/admin/danhsachsanpham/excel', 'SanPhamController@excel')->name('danhsachsanpham.excel');
+Route::get('/admin/danhsachsanpham/pdf', 'SanPhamController@pdf')->name('danhsachsanpham.pdf');
+route::resource('admin/danhsachsanpham','SanPhamController');
